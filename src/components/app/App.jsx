@@ -1,7 +1,12 @@
-import './App.css'
+import Board from '../Board'
+import './app.css'
 
 function App() {
-  return <></>
+  return (
+    <>
+      <Board />{' '}
+    </>
+  )
 }
 
 export default App

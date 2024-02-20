@@ -1,0 +1,32 @@
+.weatherHubTripItemCard {
+  width: 160px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 210px;
+  &__top {
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* чтобы изображение занимало всю доступную область */
+  }
+
+  &__bottom {
+    padding: 10px;
+  }
+
+  &__title {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  &__text {
+    font-size: 10px;
+    color: #666;
+  }
+}
