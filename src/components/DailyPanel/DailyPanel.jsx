@@ -3,7 +3,7 @@ import DailyPanelToday from '../DailyPanelToday'
 // import img from './../../images/w.jpg'
 import css from './dailyPanel.module.scss'
 
-const DailyPanel = ({ img, degr, city, days, hours, minutes, seconds }) => {
+const DailyPanel = ({ img, degr, city, futureDate }) => {
   // get current day for weather forecast
   const daysOfWeek = [
     'Sunday',
@@ -26,12 +26,7 @@ const DailyPanel = ({ img, degr, city, days, hours, minutes, seconds }) => {
         degr={degr}
         city={city}
       />
-      <DailyPanelCountDown
-        days={days}
-        hours={hours}
-        minutes={minutes}
-        seconds={seconds}
-      />
+      <DailyPanelCountDown futureDate={futureDate} />
     </div>
   )
 }

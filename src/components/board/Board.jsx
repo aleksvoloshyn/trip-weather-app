@@ -75,10 +75,6 @@ const Board = () => {
         img={currentCityWeatherIcon}
         city={currentCity}
         futureDate={currentCityStart}
-        // days={1}
-        // hours={2}
-        // minutes={3}
-        // seconds={4}
       />
     </div>
   )
