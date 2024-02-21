@@ -39,7 +39,7 @@ const WeatherHubWeekForecast = ({ weekforecast }) => {
                   </p>
                   /
                   <p className={css.weatherHubWeekForecast__degr}>
-                    {d.tempmax}
+                    {d.tempmax}&deg;
                   </p>
                 </span>
               </li>

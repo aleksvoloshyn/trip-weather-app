@@ -19,9 +19,7 @@ const Board = () => {
   useEffect(() => {
     getTodaysWeather(currentCity).then((r) => {
       setCurrentCityTemp(r.days[0].temp)
-      console.log(r)
       const iconName = r.days[0].icon
-      console.log(iconName)
       const iconUrl = `./images/icons/${iconName}.svg`
       setCurrentCityWeatherIcon(iconUrl)
     })

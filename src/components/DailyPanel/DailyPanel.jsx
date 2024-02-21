@@ -16,7 +16,6 @@ const DailyPanel = ({ img, degr, city, futureDate }) => {
   ]
   const currentDate = new Date()
   const currentDayOfWeek = daysOfWeek[currentDate.getDay()]
-  console.log(currentDayOfWeek)
 
   return (
     <div className={css.dailyPanel}>
