@@ -11,14 +11,21 @@
     margin-bottom: 20px;
   }
   &__day {
-    font-size: 38px;
+    font-size: 36px;
     font-weight: 700;
     margin-bottom: 20px;
   }
   &__degr {
-    font-size: 46px;
+    font-size: 66px;
   }
   &__city {
-    font-size: 34px;
+    font-size: 26px;
+  }
+  &__sup {
+    font-size: 28px;
+  }
+  &__img {
+    width: 100px;
+    margin-right: 20px;
   }
 }
