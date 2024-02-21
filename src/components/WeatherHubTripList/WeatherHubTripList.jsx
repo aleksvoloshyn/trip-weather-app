@@ -2,33 +2,46 @@ import WeatherHubTripItem from '../WeatherHubTripItem/WeatherHubTripItem'
 import css from './weatherHubTripList.module.scss'
 import img from './../../images/brna.jpg'
 
-const data = [
-  { id: 1, title: 'London', dates: '01.01.2024 - 14.01.2024' },
-  { id: 2, title: 'Barselona', dates: '01.01.2024 - 14.01.2024', img: img },
-  { id: 3, title: 'Kyiv', dates: '01.01.2024 - 14.01.2024' },
-  // { id: 4, title: 'Kyiv', dates: '01.01.2024 - 14.01.2024' },
-  // { id: 5, title: 'Kyiv', dates: '01.01.2024 - 14.01.2024' },
-]
-
-const WeatherHubTripList = () => {
+const WeatherHubTripList = ({
+  data,
+  cardHandler,
+  handlePrev,
+  handleNext,
+  startIndex,
+  itemsPerPage,
+  trips,
+}) => {
   return (
     <div className={css.weatherHubTripList}>
       <div className={css.weatherHubTripList__wrapper}>
         <ul className={css.weatherHubTripList__list}>
-          {data.map((v) => {
+          {data.map((v, ind) => {
             return (
               <WeatherHubTripItem
-                key={v.id}
-                title={v.title}
+                key={ind}
+                title={v.name}
                 dates={v.dates}
-                img={v.img}
+                img={v.image}
+                cardHandler={() => cardHandler(v.name, v.dates)}
               />
             )
           })}
         </ul>
         <div className={css.buttons}>
-          <button className={css.prevbtn}>&#8592;</button>
-          <button className={css.nextbtn}>&#8594; </button>
+          <button
+            className={css.prevbtn}
+            onClick={handlePrev}
+            disabled={startIndex === 0}
+          >
+            &#8592;
+          </button>
+          <button
+            className={css.nextbtn}
+            onClick={handleNext}
+            disabled={startIndex + itemsPerPage >= trips.length}
+          >
+            &#8594;
+          </button>
         </div>
       </div>
 

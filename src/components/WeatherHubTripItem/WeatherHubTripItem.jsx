@@ -1,8 +1,11 @@
 import css from './weatherHubTripItem.module.scss'
 
-const WeatherHubTripItem = ({ img, title, dates }) => {
+const WeatherHubTripItem = ({ img, title, dates, cardHandler }) => {
   return (
-    <li className={css.weatherHubTripItemCard}>
+    <li
+      className={css.weatherHubTripItemCard}
+      onClick={() => cardHandler(title, dates)}
+    >
       <div className={css.weatherHubTripItemCard__top}>
         <img
           src={img}
