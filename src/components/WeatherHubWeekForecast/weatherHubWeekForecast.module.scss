@@ -9,7 +9,8 @@
   &__list {
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
     margin: 0;
     padding: 0;
   }
@@ -19,8 +20,18 @@
     align-items: center;
   }
   &__date {
+    margin-bottom: 12px;
+    font-size: 12px;
   }
   &__degr {
     color: lightslategrey;
+  }
+  &__icon {
+    width: 40px;
+    margin-bottom: 10px;
+  }
+  &__maxmin {
+    font-size: 12px;
+    display: flex;
   }
 }

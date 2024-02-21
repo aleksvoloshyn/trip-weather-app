@@ -97,6 +97,6 @@ export const cityList = [
   {
     name: 'Berlin, Germany',
     image: 'https://source.unsplash.com/featured/?berlin',
-    dates: '22.02.2024 - 10.03.2024',
+    dates: '22.02.2024 - 25.02.2024',
   },
 ]

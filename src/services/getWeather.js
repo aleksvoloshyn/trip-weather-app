@@ -1,17 +1,23 @@
 import axios from 'axios'
 
-const apiKey = 'C95Y79CT6U7LXXVHUSXJ5ETT7'
+// korn
+// const apiKey = 'C95Y79CT6U7LXXVHUSXJ5ETT7'
 
-export const getForecast = () => {
-  return axios
-    .get(
-      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Singapore/2024-02-01/2024-02-14?unitGroup=metric&include=days&key=${apiKey}&contentType=json`
-    )
-    .then((response) => console.log(response.data))
-    .then((response) => response.data)
-    .catch((error) => {
-      console.error('Ошибка при получении данных:', error)
-    })
+// plashta
+const apiKey = 'DQFDWRAXG3D9A4H9UNJ83WFJA'
+
+export const getForecast = (city, start, end) => {
+  return (
+    axios
+      .get(
+        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}/${start}/${end}?unitGroup=metric&include=days&key=${apiKey}&contentType=json`
+      )
+      // .then((response) => console.log(response.data.days))
+      .then((response) => response.data.days)
+      .catch((error) => {
+        console.error('Ошибка при получении данных:', error)
+      })
+  )
 }
 
 export const getTodaysWeather = (city) => {

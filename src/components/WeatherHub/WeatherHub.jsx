@@ -13,6 +13,7 @@ const WeatherHub = ({
   startIndex,
   itemsPerPage,
   trips,
+  weekforecast,
 }) => {
   return (
     <div className={css.weatherHub}>
@@ -30,7 +31,7 @@ const WeatherHub = ({
           itemsPerPage={itemsPerPage}
           trips={trips}
         />
-        <WeatherHubWeekForecast />
+        <WeatherHubWeekForecast weekforecast={weekforecast} />
       </Container>
     </div>
   )

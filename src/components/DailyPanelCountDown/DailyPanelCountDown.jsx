@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 
 const DailyPanelCountDown = ({ futureDate }) => {
   const calculateTimeLeft = () => {
-    const futureDateArray = futureDate.split('.').map(Number)
+    const futureDateArray = futureDate.split('-').map(Number)
     const futureDateObj = new Date(
       futureDateArray[2],
       futureDateArray[1] - 1,

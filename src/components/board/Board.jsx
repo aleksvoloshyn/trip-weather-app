@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import DailyPanel from '../DailyPanel'
 import WeatherHub from '../WeatherHub'
 import { cityList } from './../../assets/cities'
-import { getTodaysWeather } from './../../services/getWeather'
+import { getTodaysWeather, getForecast } from './../../services/getWeather'
 import css from './board.module.scss'
 
 const Board = () => {
@@ -11,7 +11,10 @@ const Board = () => {
   const [currentCityShort, setCurrentCityShort] = useState('Mumbai')
   const [currentCityTemp, setCurrentCityTemp] = useState('')
   const [currentCityWeatherIcon, setCurrentCityWeatherIcon] = useState()
+  const [tripStart, settripStart] = useState('')
   const [currentCityStart, setCurrentCityStart] = useState('')
+  const [currentCityEnd, setCurrentCityEnd] = useState('')
+  const [weatherForWeek, setWeatherForWeek] = useState([])
 
   useEffect(() => {
     getTodaysWeather(currentCity).then((r) => {
@@ -23,6 +26,14 @@ const Board = () => {
       setCurrentCityWeatherIcon(iconUrl)
     })
   }, [currentCity])
+
+  useEffect(() => {
+    getForecast(currentCity, currentCityStart, currentCityEnd).then(
+      (forecast) => {
+        setWeatherForWeek(forecast)
+      }
+    )
+  }, [currentCity, currentCityEnd, currentCityStart])
 
   //display the last 3 added trips:
   const [startIndex, setStartIndex] = useState(0)
@@ -52,8 +63,17 @@ const Board = () => {
   // set selected trip info to state
   const setCurrentCityInfo = (title, dates) => {
     setCurrentCity(title)
-    const trimmedDateString = dates.substring(0, 10)
-    setCurrentCityStart(trimmedDateString)
+
+    const trimmedTripStart = dates.substring(0, 10).split('.').join('-')
+    const trimmedDateStringStart = dates
+      .substring(0, 10)
+      .split('.')
+      .reverse()
+      .join('-')
+    const trimmedDateStringEnd = dates.slice(-10).split('.').reverse().join('-')
+    settripStart(trimmedTripStart)
+    setCurrentCityStart(trimmedDateStringStart)
+    setCurrentCityEnd(trimmedDateStringEnd)
     console.log(title)
     console.log(dates)
     // setCurrentCityShort(title.substring(0, location.indexOf(',')))
@@ -69,12 +89,13 @@ const Board = () => {
         startIndex={startIndex}
         itemsPerPage={itemsPerPage}
         trips={trips}
+        weekforecast={weatherForWeek}
       ></WeatherHub>
       <DailyPanel
         degr={currentCityTemp}
         img={currentCityWeatherIcon}
         city={currentCity}
-        futureDate={currentCityStart}
+        futureDate={tripStart}
       />
     </div>
   )
