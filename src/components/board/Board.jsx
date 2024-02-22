@@ -8,6 +8,8 @@ import css from './board.module.scss'
 
 const Board = () => {
   const [trips, setTrips] = useState(tripList)
+  const [filteredTrips, setFilteredTrips] = useState(tripList)
+
   const [currentCity, setCurrentCity] = useState('Kyiv, UA')
   const [currentCityTemp, setCurrentCityTemp] = useState('')
   const [currentCityWeatherIcon, setCurrentCityWeatherIcon] = useState()
@@ -39,11 +41,14 @@ const Board = () => {
   const itemsPerPage = 3
 
   useEffect(() => {
-    const initialStartIndex = Math.max(0, trips.length - itemsPerPage)
+    const initialStartIndex = Math.max(0, filteredTrips.length - itemsPerPage)
     setStartIndex(initialStartIndex)
-  }, [trips])
+  }, [filteredTrips, trips])
 
-  const displayedCities = trips.slice(startIndex, startIndex + itemsPerPage)
+  const displayedCities = filteredTrips.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  )
 
   // set selected trip info to state
   const setCurrentCityInfo = (title, startDate, endDate) => {
@@ -59,6 +64,7 @@ const Board = () => {
 
   const handleSave = (data) => {
     setTrips((prevTrips) => [...prevTrips, data])
+    setFilteredTrips((prevTrips) => [...prevTrips, data])
   }
 
   const handleNext =
@@ -73,6 +79,13 @@ const Board = () => {
   const handlePrev = (startIndex, setStartIndex) => () => {
     const newStartIndex = Math.max(0, startIndex - itemsPerPage)
     setStartIndex(newStartIndex)
+  }
+
+  const onChangeHandler = (text) => {
+    let filtered = trips.filter((item) =>
+      item.city.split(',')[0].trim().toLowerCase().includes(text.toLowerCase())
+    )
+    setFilteredTrips(filtered)
   }
 
   return (
@@ -95,6 +108,7 @@ const Board = () => {
         addCardHandler={() => {
           setModalIsOpened(true)
         }}
+        onChangeHandler={onChangeHandler}
       ></WeatherHub>
       <DailyPanel
         degr={currentCityTemp}

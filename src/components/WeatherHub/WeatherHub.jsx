@@ -15,6 +15,7 @@ const WeatherHub = ({
   trips,
   weekforecast,
   addCardHandler,
+  onChangeHandler,
 }) => {
   return (
     <div className={css.weatherHub}>
@@ -22,7 +23,7 @@ const WeatherHub = ({
         <h1 className={css.weatherHub__title}>
           Weather <strong>Forecast</strong>
         </h1>
-        <WeatherHubSearch />
+        <WeatherHubSearch onChangeHandler={onChangeHandler} />
         <WeatherHubTripList
           data={data}
           cardHandler={(title, startDate, endDate) =>
@@ -51,5 +52,6 @@ WeatherHub.propTypes = {
   trips: PropTypes.array,
   weekforecast: PropTypes.array,
   addCardHandler: PropTypes.func,
+  onChangeHandler: PropTypes.func,
 }
 export default WeatherHub
