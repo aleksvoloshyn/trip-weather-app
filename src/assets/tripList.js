@@ -4,54 +4,54 @@ export const tripList = [
     startDate: '2024-02-25',
     endDate: '2024-03-05',
   },
-  // {
-  //   city: 'London, UK',
-  //   startDate: '2024-02-25',
-  //   endDate: '2024-02-28',
-  // },
-  // {
-  //   city: 'Paris, France',
-  //   startDate: '2024-02-25',
-  //   endDate: '2024-02-28',
-  // },
-  // {
-  //   city: 'New York City, USA',
-  //   startDate: '2024-02-25',
-  //   endDate: '2024-02-28',
-  // },
-  // {
-  //   city: 'Tokyo, Japan',
-  //   startDate: '2024-02-25',
-  //   endDate: '2024-02-28',
-  // },
-  // {
-  //   city: 'Singapore',
-  //   startDate: '2024-02-25',
-  //   endDate: '2024-02-28',
-  // },
-  // {
-  //   city: 'Dubai, UAE',
+  {
+    city: 'London, UK',
+    startDate: '2024-02-25',
+    endDate: '2024-02-28',
+  },
+  {
+    city: 'Paris, France',
+    startDate: '2024-02-25',
+    endDate: '2024-02-28',
+  },
+  {
+    city: 'New York City, USA',
+    startDate: '2024-02-25',
+    endDate: '2024-02-28',
+  },
+  {
+    city: 'Tokyo, Japan',
+    startDate: '2024-02-25',
+    endDate: '2024-02-28',
+  },
+  {
+    city: 'Singapore',
+    startDate: '2024-02-25',
+    endDate: '2024-02-28',
+  },
+  {
+    city: 'Dubai, UAE',
 
-  //   startDate: '2024-02-25',
-  //   endDate: '2024-02-28',
-  // },
+    startDate: '2024-02-25',
+    endDate: '2024-02-28',
+  },
+  {
+    city: 'Istanbul, Turkey',
+    startDate: '2024-02-25',
+    endDate: '2024-02-28',
+  },
+  {
+    city: 'Seoul, South Korea',
+    startDate: '2024-02-25',
+    endDate: '2024-02-28',
+  },
+  {
+    city: 'Bangkok, Thailand',
+    startDate: '2024-02-25',
+    endDate: '2024-02-28',
+  },
   // {
-  //   city: 'Istanbul, Turkey',
-  //   startDate: '2024-02-25',
-  //   endDate: '2024-02-28',
-  // },
-  // {
-  //   city: 'Seoul, South Korea',
-  //   startDate: '2024-02-25',
-  //   endDate: '2024-02-28',
-  // },
-  // {
-  //   city: 'Bangkok, Thailand',
-  //   startDate: '2024-02-25',
-  //   endDate: '2024-02-28',
-  // },
-  // {
-  //   city: 'Amsterdam, Netherlands',
+  // city: 'Amsterdam, Netherlands',
 
   //   startDate: '2024-02-25',
   //   endDate: '2024-02-28',

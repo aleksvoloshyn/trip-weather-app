@@ -4,7 +4,6 @@ import WeatherHub from '../WeatherHub'
 import { tripList } from './../../assets/tripList'
 import { getTodaysWeather, getForecast } from './../../services/getWeather'
 import Modal from '../Modal/Modal'
-import { handlePrev, handleNext } from '../../utils/boardFunctions'
 import css from './board.module.scss'
 
 const Board = () => {
@@ -62,6 +61,20 @@ const Board = () => {
     setTrips((prevTrips) => [...prevTrips, data])
   }
 
+  const handleNext =
+    (startIndex, itemsPerPage, setStartIndex, totalTripsLength) => () => {
+      const newStartIndex = Math.min(
+        startIndex + itemsPerPage,
+        totalTripsLength - itemsPerPage
+      )
+      setStartIndex(newStartIndex)
+    }
+
+  const handlePrev = (startIndex, setStartIndex) => () => {
+    const newStartIndex = Math.max(0, startIndex - itemsPerPage)
+    setStartIndex(newStartIndex)
+  }
+
   return (
     <div className={css.board}>
       <Modal isOpen={modalIsOpened} onClose={closeModal} onSave={handleSave} />
@@ -69,7 +82,12 @@ const Board = () => {
         data={displayedCities}
         cardHandler={setCurrentCityInfo}
         handlePrev={handlePrev(startIndex, setStartIndex)}
-        handleNext={handleNext(startIndex, itemsPerPage, trips, setStartIndex)}
+        handleNext={handleNext(
+          startIndex,
+          itemsPerPage,
+          setStartIndex,
+          trips.length
+        )}
         startIndex={startIndex}
         itemsPerPage={itemsPerPage}
         trips={trips}
