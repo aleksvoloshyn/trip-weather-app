@@ -7,23 +7,34 @@ const Modal = ({ isOpen, onClose, onSave }) => {
   const [city, setCity] = useState('')
   const [startDate, setStartDate] = useState('')
   const [endDate, setEndDate] = useState('')
+  const [error, setError] = useState('')
 
   const handleSave = () => {
     onSave({ city, startDate, endDate })
     onClose()
+    if (!startDate || !endDate || !city) {
+      setError('Please fill in all fields.')
+    } else {
+      console.log('Submitted data:', { startDate, endDate, city })
+    }
   }
 
   const handleCityChange = (event) => {
     setCity(event.target.value)
+    setError('')
   }
 
   const handleStartDateChange = (event) => {
     setStartDate(event.target.value)
+    setError('')
   }
 
   const handleEndDateChange = (event) => {
     setEndDate(event.target.value)
+    setError('')
   }
+
+  const isSaveDisabled = !startDate || !endDate || !city
 
   return (
     <>
@@ -83,7 +94,11 @@ const Modal = ({ isOpen, onClose, onSave }) => {
               <button className={css.cancel__button} onClick={onClose}>
                 Cancel
               </button>
-              <button className={css.save__button} onClick={handleSave}>
+              <button
+                className={css.save__button}
+                onClick={handleSave}
+                disabled={isSaveDisabled}
+              >
                 Save
               </button>
             </div>

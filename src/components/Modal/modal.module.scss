@@ -86,3 +86,8 @@ select {
   background-color: #007bff;
   color: #fff;
 }
+
+.save__button[disabled] {
+  background-color: lightpink;
+  color: white;
+}
