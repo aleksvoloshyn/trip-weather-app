@@ -87,6 +87,8 @@ const Board = () => {
 
   const handleSave = (data) => {
     setTripData(data)
+    // setTrips(trips.push(data))
+    console.log(data)
   }
 
   return (

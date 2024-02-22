@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { popularCities } from '../../assets/cityList'
 import css from './modal.module.scss'
 
 const Modal = ({ isOpen, onClose, onSave }) => {
@@ -47,9 +48,16 @@ const Modal = ({ isOpen, onClose, onSave }) => {
                   required
                 >
                   <option value="">Please select a city</option>
-                  <option value="New York">New York</option>
+                  {popularCities.map((item, ind) => {
+                    return (
+                      <option value={item} key={ind}>
+                        {item}
+                      </option>
+                    )
+                  })}
+                  {/* <option value="New York">New York</option>
                   <option value="London">London</option>
-                  <option value="Tokyo">Tokyo</option>
+                  <option value="Tokyo">Tokyo</option> */}
                   {/* Add more city options as needed */}
                 </select>
               </div>
