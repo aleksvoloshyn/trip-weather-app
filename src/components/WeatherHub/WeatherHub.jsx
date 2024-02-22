@@ -17,6 +17,8 @@ const WeatherHub = ({
   addCardHandler,
   onChangeHandler,
   filteredData,
+  sortByDateHandlerDown,
+  sortByDateHandlerUp,
 }) => {
   return (
     <div className={css.weatherHub}>
@@ -24,7 +26,23 @@ const WeatherHub = ({
         <h1 className={css.weatherHub__title}>
           Weather <strong>Forecast</strong>
         </h1>
-        <WeatherHubSearch onChangeHandler={onChangeHandler} />
+        <span className={css.weatherHub__wrap}>
+          {' '}
+          <WeatherHubSearch onChangeHandler={onChangeHandler} />
+          <button
+            className={css.weatherHub__btndwn}
+            onClick={sortByDateHandlerDown}
+          >
+            Sort ▼
+          </button>
+          <button
+            className={css.weatherHub__btnup}
+            onClick={sortByDateHandlerUp}
+          >
+            Sort ▲
+          </button>
+        </span>
+
         <WeatherHubTripList
           data={data}
           cardHandler={(title, startDate, endDate) =>
@@ -55,6 +73,8 @@ WeatherHub.propTypes = {
   weekforecast: PropTypes.array,
   addCardHandler: PropTypes.func,
   onChangeHandler: PropTypes.func,
+  sortByDateHandlerDown: PropTypes.func,
+  sortByDateHandlerUp: PropTypes.func,
   filteredData: PropTypes.array,
 }
 export default WeatherHub

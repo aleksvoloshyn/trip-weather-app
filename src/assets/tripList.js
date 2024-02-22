@@ -1,57 +1,57 @@
 export const tripList = [
   {
     city: 'Barcelona, Spain',
-    startDate: '2024-02-25',
-    endDate: '2024-03-05',
+    startDate: '2024-02-26',
+    endDate: '2024-03-08',
   },
   {
     city: 'London, UK',
-    startDate: '2024-02-25',
-    endDate: '2024-02-28',
+    startDate: '2024-02-23',
+    endDate: '2024-03-08',
   },
   {
     city: 'Paris, France',
-    startDate: '2024-02-25',
-    endDate: '2024-02-28',
+    startDate: '2024-02-21',
+    endDate: '2024-03-07',
   },
   {
-    city: 'New York City, USA',
+    city: 'Kyiv, Ukraine',
     startDate: '2024-02-25',
-    endDate: '2024-02-28',
-  },
-  {
-    city: 'Tokyo, Japan',
-    startDate: '2024-02-25',
-    endDate: '2024-02-28',
-  },
-  {
-    city: 'Singapore',
-    startDate: '2024-02-25',
-    endDate: '2024-02-28',
-  },
-  {
-    city: 'Dubai, UAE',
-
-    startDate: '2024-02-25',
-    endDate: '2024-02-28',
-  },
-  {
-    city: 'Istanbul, Turkey',
-    startDate: '2024-02-25',
-    endDate: '2024-02-28',
-  },
-  {
-    city: 'Seoul, South Korea',
-    startDate: '2024-02-25',
-    endDate: '2024-02-28',
-  },
-  {
-    city: 'Bangkok, Thailand',
-    startDate: '2024-02-25',
-    endDate: '2024-02-28',
+    endDate: '2024-03-05',
   },
   // {
-  // city: 'Amsterdam, Netherlands',
+  //   city: 'Tokyo, Japan',
+  //   startDate: '2024-02-25',
+  //   endDate: '2024-03-08',
+  // },
+  // {
+  //   city: 'Singapore',
+  //   startDate: '2024-02-25',
+  //   endDate: '2024-02-28',
+  // },
+  // {
+  //   city: 'Dubai, UAE',
+
+  //   startDate: '2024-02-25',
+  //   endDate: '2024-02-28',
+  // },
+  // {
+  //   city: 'Istanbul, Turkey',
+  //   startDate: '2024-02-25',
+  //   endDate: '2024-02-28',
+  // },
+  // {
+  //   city: 'Seoul, South Korea',
+  //   startDate: '2024-02-25',
+  //   endDate: '2024-02-28',
+  // },
+  // {
+  //   city: 'Bangkok, Thailand',
+  //   startDate: '2024-02-25',
+  //   endDate: '2024-02-28',
+  // },
+  // {
+  //   city: 'Amsterdam, Netherlands',
 
   //   startDate: '2024-02-25',
   //   endDate: '2024-02-28',

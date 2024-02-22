@@ -88,6 +88,19 @@ const Board = () => {
     setFilteredTrips(filtered)
   }
 
+  const sortByDateHandlerDown = () => {
+    const sortedTripList = [...trips].sort((a, b) => {
+      return new Date(a.startDate) - new Date(b.startDate)
+    })
+    setFilteredTrips(sortedTripList)
+  }
+  const sortByDateHandlerUp = () => {
+    const sortedTripList = [...trips].sort((a, b) => {
+      return new Date(b.startDate) - new Date(a.startDate)
+    })
+    setFilteredTrips(sortedTripList)
+  }
+
   return (
     <div className={css.board}>
       <Modal isOpen={modalIsOpened} onClose={closeModal} onSave={handleSave} />
@@ -110,6 +123,8 @@ const Board = () => {
           setModalIsOpened(true)
         }}
         onChangeHandler={onChangeHandler}
+        sortByDateHandlerDown={sortByDateHandlerDown}
+        sortByDateHandlerUp={sortByDateHandlerUp}
       ></WeatherHub>
       <DailyPanel
         degr={currentCityTemp}

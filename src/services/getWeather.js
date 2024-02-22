@@ -1,13 +1,6 @@
 import axios from 'axios'
 
-// vj
-const apiKey = 'B4SR2X8RSWTR4Z75BLPG5854S'
-
-// plashta
-// const apiKey = 'DQFDWRAXG3D9A4H9UNJ83WFJA'
-
-// korn
-// const apiKey = 'C95Y79CT6U7LXXVHUSXJ5ETT7'
+const apiKey = import.meta.env.VITE_API_KEY
 
 export const getForecast = (city, start, end) => {
   return (

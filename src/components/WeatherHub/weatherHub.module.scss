@@ -5,4 +5,23 @@
   &__title {
     margin-bottom: 30px;
   }
+  &__wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 0 20px;
+  }
+  &__btndwn {
+    outline: 1px solid lavenderblush;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: linen;
+  }
+  &__btnup {
+    outline: 1px solid lavenderblush;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: lavenderblush;
+  }
 }
