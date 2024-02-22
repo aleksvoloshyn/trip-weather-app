@@ -10,6 +10,7 @@ const WeatherHubTripList = ({
   startIndex,
   itemsPerPage,
   trips,
+  addCardHandler,
 }) => {
   return (
     <div className={css.weatherHubTripList}>
@@ -49,9 +50,7 @@ const WeatherHubTripList = ({
         <button
           type="button"
           className={css.addTrip__button}
-          onClick={() => {
-            console.log('click click')
-          }}
+          onClick={addCardHandler}
         >
           <p className={css.addTrip__plus}>+</p>
           <p className={css.addTrip__text}>Add trip</p>

@@ -3,6 +3,7 @@ import DailyPanel from '../DailyPanel'
 import WeatherHub from '../WeatherHub'
 import { cityList } from './../../assets/cities'
 import { getTodaysWeather, getForecast } from './../../services/getWeather'
+import Modal from '../Modal/Modal'
 import css from './board.module.scss'
 
 const Board = () => {
@@ -15,6 +16,9 @@ const Board = () => {
   const [currentCityStart, setCurrentCityStart] = useState('')
   const [currentCityEnd, setCurrentCityEnd] = useState('')
   const [weatherForWeek, setWeatherForWeek] = useState([])
+
+  const [isOpen, setIsOpen] = useState(false)
+  const [tripData, setTripData] = useState(null)
 
   useEffect(() => {
     getTodaysWeather(currentCity).then((r) => {
@@ -77,8 +81,17 @@ const Board = () => {
     // setCurrentCityShort(title.substring(0, location.indexOf(',')))
   }
 
+  const closeModal = () => {
+    setIsOpen(false)
+  }
+
+  const handleSave = (data) => {
+    setTripData(data)
+  }
+
   return (
     <div className={css.board}>
+      <Modal isOpen={isOpen} onClose={closeModal} onSave={handleSave} />
       <WeatherHub
         data={displayedCities}
         cardHandler={setCurrentCityInfo}
@@ -88,6 +101,10 @@ const Board = () => {
         itemsPerPage={itemsPerPage}
         trips={trips}
         weekforecast={weatherForWeek}
+        addCardHandler={() => {
+          setIsOpen(true)
+          console.log(1)
+        }}
       ></WeatherHub>
       <DailyPanel
         degr={currentCityTemp}

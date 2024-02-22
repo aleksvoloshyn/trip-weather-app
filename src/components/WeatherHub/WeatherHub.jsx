@@ -14,6 +14,7 @@ const WeatherHub = ({
   itemsPerPage,
   trips,
   weekforecast,
+  addCardHandler,
 }) => {
   return (
     <div className={css.weatherHub}>
@@ -30,6 +31,7 @@ const WeatherHub = ({
           startIndex={startIndex}
           itemsPerPage={itemsPerPage}
           trips={trips}
+          addCardHandler={addCardHandler}
         />
         <WeatherHubWeekForecast weekforecast={weekforecast} />
       </Container>
