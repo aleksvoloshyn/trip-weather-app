@@ -29,18 +29,21 @@ const WeatherHub = ({
         <span className={css.weatherHub__wrap}>
           {' '}
           <WeatherHubSearch onChangeHandler={onChangeHandler} />
-          <button
-            className={css.weatherHub__btndwn}
-            onClick={sortByDateHandlerDown}
-          >
-            Sort ▼
-          </button>
-          <button
-            className={css.weatherHub__btnup}
-            onClick={sortByDateHandlerUp}
-          >
-            Sort ▲
-          </button>
+          <div className={css.weatherHub__btns}>
+            {' '}
+            <button
+              className={css.weatherHub__btndwn}
+              onClick={sortByDateHandlerDown}
+            >
+              Sort ▼
+            </button>
+            <button
+              className={css.weatherHub__btnup}
+              onClick={sortByDateHandlerUp}
+            >
+              Sort ▲
+            </button>
+          </div>
         </span>
 
         <WeatherHubTripList

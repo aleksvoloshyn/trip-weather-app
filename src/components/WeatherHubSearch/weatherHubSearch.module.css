@@ -1,3 +1,4 @@
+@import './../../styles/_breakpoints.scss';
 .inputContainer {
   position: relative;
   margin-bottom: 30px;

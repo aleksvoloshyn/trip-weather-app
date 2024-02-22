@@ -1,14 +1,29 @@
+@import './../../styles/breakpoints';
+
 .weatherHub {
   // outline: 2px solid salmon;
   width: 65%;
   padding-top: 20px;
   &__title {
     margin-bottom: 30px;
+    @media (max-width: $mobile) {
+      font-size: 16px;
+    }
   }
   &__wrap {
     display: flex;
     align-items: baseline;
     gap: 0 20px;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+  &__btns {
+    display: flex;
+    gap: 20px;
+    @media (max-width: $mobile) {
+      margin-bottom: 10px;
+    }
   }
   &__btndwn {
     outline: 1px solid lavenderblush;
@@ -16,6 +31,9 @@
     border-radius: 5px;
     padding: 10px;
     background-color: linen;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
   }
   &__btnup {
     outline: 1px solid lavenderblush;

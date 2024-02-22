@@ -21,6 +21,7 @@ const Modal = ({ isOpen, onClose, onSave }) => {
     onClose()
     if (!startDate || !endDate || !city) {
       setError('Please fill in all fields.')
+      console.log(error)
     } else {
       console.log('Submitted data:', { startDate, endDate, city })
     }
