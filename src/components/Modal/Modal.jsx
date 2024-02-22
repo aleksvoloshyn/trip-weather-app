@@ -9,6 +9,13 @@ const Modal = ({ isOpen, onClose, onSave }) => {
   const [endDate, setEndDate] = useState('')
   const [error, setError] = useState('')
 
+  const currentDate = new Date()
+  const nextFifteenDays = new Date(
+    currentDate.getTime() + 15 * 24 * 60 * 60 * 1000
+  )
+  const today = currentDate.toISOString().split('T')[0] // format for date input
+  const maxDate = nextFifteenDays.toISOString().split('T')[0] // format for date input
+
   const handleSave = () => {
     onSave({ city, startDate, endDate })
     onClose()
@@ -76,7 +83,8 @@ const Modal = ({ isOpen, onClose, onSave }) => {
                   id="startDate"
                   value={startDate}
                   onChange={handleStartDateChange}
-                  required
+                  min={today}
+                  max={maxDate}
                 />
               </div>
               <div className={css.form__group}>
@@ -86,7 +94,8 @@ const Modal = ({ isOpen, onClose, onSave }) => {
                   id="endDate"
                   value={endDate}
                   onChange={handleEndDateChange}
-                  required
+                  min={today}
+                  max={maxDate}
                 />
               </div>
             </div>
