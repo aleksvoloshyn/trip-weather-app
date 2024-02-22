@@ -1,24 +1,22 @@
 import { useState, useEffect } from 'react'
 import DailyPanel from '../DailyPanel'
 import WeatherHub from '../WeatherHub'
-import { cityList } from './../../assets/cities'
+import { tripList } from './../../assets/tripList'
 import { getTodaysWeather, getForecast } from './../../services/getWeather'
 import Modal from '../Modal/Modal'
+import { handlePrev, handleNext } from '../../utils/boardFunctions'
 import css from './board.module.scss'
 
 const Board = () => {
-  const [trips, setTrips] = useState(cityList)
-  const [currentCity, setCurrentCity] = useState('Mumbai, India')
-  const [currentCityShort, setCurrentCityShort] = useState('Mumbai')
+  const [trips, setTrips] = useState(tripList)
+  const [currentCity, setCurrentCity] = useState('Kyiv, UA')
   const [currentCityTemp, setCurrentCityTemp] = useState('')
   const [currentCityWeatherIcon, setCurrentCityWeatherIcon] = useState()
   const [tripStart, setTripStart] = useState('')
   const [currentCityStart, setCurrentCityStart] = useState('')
   const [currentCityEnd, setCurrentCityEnd] = useState('')
   const [weatherForWeek, setWeatherForWeek] = useState([])
-
-  const [isOpen, setIsOpen] = useState(false)
-  const [tripData, setTripData] = useState(null)
+  const [modalIsOpened, setModalIsOpened] = useState(false)
 
   useEffect(() => {
     getTodaysWeather(currentCity).then((r) => {
@@ -48,54 +46,36 @@ const Board = () => {
 
   const displayedCities = trips.slice(startIndex, startIndex + itemsPerPage)
 
-  // previous button handler (go 1 step back)
-  const handlePrev = () => {
-    if (startIndex > 0) {
-      setStartIndex((prevIndex) => prevIndex - 1)
-      console.log('prev')
-    }
-  }
-  // next button handler (go 1 step forward)
-  const handleNext = () => {
-    if (startIndex + itemsPerPage < trips.length) {
-      setStartIndex((prevIndex) => prevIndex + 1)
-    }
-  }
-
   // set selected trip info to state
   const setCurrentCityInfo = (title, startDate, endDate) => {
     setCurrentCity(title)
-
     setTripStart(startDate)
     setCurrentCityStart(startDate)
     setCurrentCityEnd(endDate)
   }
 
   const closeModal = () => {
-    setIsOpen(false)
+    setModalIsOpened(false)
   }
 
   const handleSave = (data) => {
-    setTripData(data)
-    // setTrips(trips.push(data))
-    console.log(data)
+    setTrips((prevTrips) => [...prevTrips, data])
   }
 
   return (
     <div className={css.board}>
-      <Modal isOpen={isOpen} onClose={closeModal} onSave={handleSave} />
+      <Modal isOpen={modalIsOpened} onClose={closeModal} onSave={handleSave} />
       <WeatherHub
         data={displayedCities}
         cardHandler={setCurrentCityInfo}
-        handlePrev={handlePrev}
-        handleNext={handleNext}
+        handlePrev={handlePrev(startIndex, setStartIndex)}
+        handleNext={handleNext(startIndex, itemsPerPage, trips, setStartIndex)}
         startIndex={startIndex}
         itemsPerPage={itemsPerPage}
         trips={trips}
         weekforecast={weatherForWeek}
         addCardHandler={() => {
-          setIsOpen(true)
-          console.log(1)
+          setModalIsOpened(true)
         }}
       ></WeatherHub>
       <DailyPanel

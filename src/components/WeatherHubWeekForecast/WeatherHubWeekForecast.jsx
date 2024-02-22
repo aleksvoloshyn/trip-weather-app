@@ -1,4 +1,4 @@
-import img from './../../images/w.jpg'
+import PropTypes from 'prop-types'
 import css from './weatherHubWeekForecast.module.scss'
 
 const WeatherHubWeekForecast = ({ weekforecast }) => {
@@ -52,5 +52,7 @@ const WeatherHubWeekForecast = ({ weekforecast }) => {
     </div>
   )
 }
-
+WeatherHubWeekForecast.propTypes = {
+  weekforecast: PropTypes.array,
+}
 export default WeatherHubWeekForecast

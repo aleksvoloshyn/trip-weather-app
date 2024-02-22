@@ -1,6 +1,6 @@
+import PropTypes from 'prop-types'
 import WeatherHubTripItem from '../WeatherHubTripItem/WeatherHubTripItem'
 import css from './weatherHubTripList.module.scss'
-import img from './../../images/brna.jpg'
 
 const WeatherHubTripList = ({
   data,
@@ -20,7 +20,7 @@ const WeatherHubTripList = ({
             return (
               <WeatherHubTripItem
                 key={ind}
-                title={v.city}
+                cityName={v.city}
                 startDate={v.startDate.split('-').reverse().join('.')}
                 endDate={v.endDate.split('-').reverse().join('.')}
                 img={v.city}
@@ -63,4 +63,15 @@ const WeatherHubTripList = ({
   )
 }
 
+WeatherHubTripList.propTypes = {
+  data: PropTypes.array,
+  cardHandler: PropTypes.func,
+  handlePrev: PropTypes.func,
+  handleNext: PropTypes.func,
+  startIndex: PropTypes.number,
+  itemsPerPage: PropTypes.number,
+  trips: PropTypes.array,
+
+  addCardHandler: PropTypes.func,
+}
 export default WeatherHubTripList

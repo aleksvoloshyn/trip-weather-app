@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import css from './dailyPanelToday.module.scss'
 
 const DailyPanelToday = ({ day, degr, img, city }) => {
@@ -13,9 +14,14 @@ const DailyPanelToday = ({ day, degr, img, city }) => {
         <p className={css.dailyPanelToday__degr}>{degr}</p>
         <sup className={css.dailyPanelToday__sup}>&deg;C</sup>
       </div>
-      <p className={css.dailyPanelToday__city}>{city}</p>
+      <p className={css.dailyPanelToday__city}>{city.split(',')[0].trim()}</p>
     </div>
   )
 }
-
+DailyPanelToday.propTypes = {
+  day: PropTypes.string,
+  degr: PropTypes.any,
+  img: PropTypes.string,
+  city: PropTypes.string,
+}
 export default DailyPanelToday

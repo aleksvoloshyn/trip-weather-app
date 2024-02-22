@@ -1,10 +1,10 @@
 import axios from 'axios'
 
 // korn
-// const apiKey = 'C95Y79CT6U7LXXVHUSXJ5ETT7'
+const apiKey = 'C95Y79CT6U7LXXVHUSXJ5ETT7'
 
 // plashta
-const apiKey = 'DQFDWRAXG3D9A4H9UNJ83WFJA'
+// const apiKey = 'DQFDWRAXG3D9A4H9UNJ83WFJA'
 
 export const getForecast = (city, start, end) => {
   return (

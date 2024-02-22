@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import css from './dailyPanelCountDown.module.scss'
 
 import { useState, useEffect } from 'react'
@@ -5,11 +6,7 @@ import { useState, useEffect } from 'react'
 const DailyPanelCountDown = ({ futureDate }) => {
   const calculateTimeLeft = () => {
     const futureDateArray = futureDate.split('-').map(Number)
-    const futureDateObj = new Date(
-      futureDateArray[2],
-      futureDateArray[1] - 1,
-      futureDateArray[0]
-    )
+    const futureDateObj = new Date(futureDateArray)
 
     const difference = futureDateObj.getTime() - new Date().getTime()
     let timeLeft = {}
@@ -69,4 +66,7 @@ const DailyPanelCountDown = ({ futureDate }) => {
   )
 }
 
+DailyPanelCountDown.propTypes = {
+  futureDate: PropTypes.string,
+}
 export default DailyPanelCountDown

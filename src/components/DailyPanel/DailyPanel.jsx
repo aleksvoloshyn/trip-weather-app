@@ -1,6 +1,6 @@
 import DailyPanelCountDown from '../DailyPanelCountDown'
 import DailyPanelToday from '../DailyPanelToday'
-// import img from './../../images/w.jpg'
+import PropTypes from 'prop-types'
 import css from './dailyPanel.module.scss'
 
 const DailyPanel = ({ img, degr, city, futureDate }) => {
@@ -29,5 +29,10 @@ const DailyPanel = ({ img, degr, city, futureDate }) => {
     </div>
   )
 }
-
+DailyPanel.propTypes = {
+  img: PropTypes.string,
+  degr: PropTypes.any,
+  city: PropTypes.string,
+  futureDate: PropTypes.string,
+}
 export default DailyPanel

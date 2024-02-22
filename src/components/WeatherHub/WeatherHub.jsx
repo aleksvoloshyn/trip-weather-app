@@ -1,9 +1,9 @@
+import PropTypes from 'prop-types'
 import Container from '../Container/Container'
 import WeatherHubSearch from '../WeatherHubSearch/WeatherHubSearch'
 import WeatherHubTripList from '../WeatherHubTripList'
 import WeatherHubWeekForecast from '../WeatherHubWeekForecast'
 import css from './weatherHub.module.scss'
-import img from './../../images/brna.jpg'
 
 const WeatherHub = ({
   data,
@@ -41,4 +41,15 @@ const WeatherHub = ({
   )
 }
 
+WeatherHub.propTypes = {
+  data: PropTypes.array,
+  cardHandler: PropTypes.func,
+  handlePrev: PropTypes.func,
+  handleNext: PropTypes.func,
+  startIndex: PropTypes.number,
+  itemsPerPage: PropTypes.number,
+  trips: PropTypes.array,
+  weekforecast: PropTypes.array,
+  addCardHandler: PropTypes.func,
+}
 export default WeatherHub

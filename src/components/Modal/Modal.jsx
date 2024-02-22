@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { popularCities } from '../../assets/cityList'
+import PropTypes from 'prop-types'
 import css from './modal.module.scss'
 
 const Modal = ({ isOpen, onClose, onSave }) => {
@@ -93,4 +94,9 @@ const Modal = ({ isOpen, onClose, onSave }) => {
   )
 }
 
+Modal.propTypes = {
+  isOpen: PropTypes.bool,
+  onClose: PropTypes.func,
+  onSave: PropTypes.func,
+}
 export default Modal

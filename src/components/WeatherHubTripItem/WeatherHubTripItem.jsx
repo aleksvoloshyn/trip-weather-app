@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types'
 import css from './weatherHubTripItem.module.scss'
 
 const WeatherHubTripItem = ({
   img,
-  title,
+  cityName,
   startDate,
   endDate,
   cardHandler,
@@ -11,22 +12,24 @@ const WeatherHubTripItem = ({
     <li
       className={css.weatherHubTripItemCard}
       onClick={() => {
-        console.log(endDate)
-        console.log(11111111111)
-        cardHandler(title, startDate, endDate)
+        cardHandler(cityName, startDate, endDate)
       }}
     >
       <div className={css.weatherHubTripItemCard__top}>
-        {(
+        {img ? (
           <img
             src={`https://source.unsplash.com/featured/?${img}`}
             alt={img}
             className={css.weatherHubTripItemCard__image}
           />
-        ) || 'loading...'}
+        ) : (
+          'no image...'
+        )}
       </div>
       <div className={css.weatherHubTripItemCard__bottom}>
-        <h2 className={css.weatherHubTripItemCard__title}>{title}</h2>
+        <h2 className={css.weatherHubTripItemCard__title}>
+          {cityName.split(',')[0].trim()}
+        </h2>
         <p className={css.weatherHubTripItemCard__text}>
           {startDate} - {endDate}
         </p>
@@ -35,4 +38,11 @@ const WeatherHubTripItem = ({
   )
 }
 
+WeatherHubTripItem.propTypes = {
+  img: PropTypes.string,
+  cityName: PropTypes.string,
+  startDate: PropTypes.string,
+  endDate: PropTypes.string,
+  cardHandler: PropTypes.func,
+}
 export default WeatherHubTripItem
