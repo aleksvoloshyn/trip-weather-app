@@ -16,6 +16,7 @@ const WeatherHub = ({
   weekforecast,
   addCardHandler,
   onChangeHandler,
+  filteredData,
 }) => {
   return (
     <div className={css.weatherHub}>
@@ -35,6 +36,7 @@ const WeatherHub = ({
           itemsPerPage={itemsPerPage}
           trips={trips}
           addCardHandler={addCardHandler}
+          filteredData={filteredData}
         />
         <WeatherHubWeekForecast weekforecast={weekforecast} />
       </Container>
@@ -53,5 +55,6 @@ WeatherHub.propTypes = {
   weekforecast: PropTypes.array,
   addCardHandler: PropTypes.func,
   onChangeHandler: PropTypes.func,
+  filteredData: PropTypes.array,
 }
 export default WeatherHub

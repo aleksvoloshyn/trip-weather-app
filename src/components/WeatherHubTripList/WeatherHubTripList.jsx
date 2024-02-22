@@ -11,6 +11,7 @@ const WeatherHubTripList = ({
   itemsPerPage,
   trips,
   addCardHandler,
+  filteredData,
 }) => {
   return (
     <div className={css.weatherHubTripList}>
@@ -31,22 +32,25 @@ const WeatherHubTripList = ({
             )
           })}
         </ul>
-        <div className={css.buttons}>
-          <button
-            className={css.prevbtn}
-            onClick={handlePrev}
-            disabled={startIndex === 0}
-          >
-            &#8592;
-          </button>
-          <button
-            className={css.nextbtn}
-            onClick={handleNext}
-            disabled={startIndex + itemsPerPage >= trips.length}
-          >
-            &#8594;
-          </button>
-        </div>
+
+        {filteredData.length > 2 && (
+          <div className={css.buttons}>
+            <button
+              className={css.prevbtn}
+              onClick={handlePrev}
+              disabled={startIndex === 0}
+            >
+              &#8592;
+            </button>
+            <button
+              className={css.nextbtn}
+              onClick={handleNext}
+              disabled={startIndex + itemsPerPage >= trips.length}
+            >
+              &#8594;
+            </button>
+          </div>
+        )}
       </div>
 
       <div className={css.addTrip}>
@@ -71,7 +75,7 @@ WeatherHubTripList.propTypes = {
   startIndex: PropTypes.number,
   itemsPerPage: PropTypes.number,
   trips: PropTypes.array,
-
+  filteredData: PropTypes.array,
   addCardHandler: PropTypes.func,
 }
 export default WeatherHubTripList

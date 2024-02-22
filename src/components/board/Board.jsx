@@ -105,6 +105,7 @@ const Board = () => {
         itemsPerPage={itemsPerPage}
         trips={trips}
         weekforecast={weatherForWeek}
+        filteredData={filteredTrips}
         addCardHandler={() => {
           setModalIsOpened(true)
         }}
