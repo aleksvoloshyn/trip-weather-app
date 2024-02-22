@@ -55,10 +55,6 @@ const Modal = ({ isOpen, onClose, onSave }) => {
                       </option>
                     )
                   })}
-                  {/* <option value="New York">New York</option>
-                  <option value="London">London</option>
-                  <option value="Tokyo">Tokyo</option> */}
-                  {/* Add more city options as needed */}
                 </select>
               </div>
               <div className={css.form__group}>

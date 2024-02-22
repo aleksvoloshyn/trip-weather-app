@@ -20,10 +20,13 @@ const WeatherHubTripList = ({
             return (
               <WeatherHubTripItem
                 key={ind}
-                title={v.name}
-                dates={v.dates}
-                img={v.image}
-                cardHandler={() => cardHandler(v.name, v.dates)}
+                title={v.city}
+                startDate={v.startDate.split('-').reverse().join('.')}
+                endDate={v.endDate.split('-').reverse().join('.')}
+                img={v.city}
+                cardHandler={() => {
+                  cardHandler(v.city, v.startDate, v.endDate)
+                }}
               />
             )
           })}

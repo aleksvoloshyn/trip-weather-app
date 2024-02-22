@@ -25,7 +25,9 @@ const WeatherHub = ({
         <WeatherHubSearch />
         <WeatherHubTripList
           data={data}
-          cardHandler={(title, dates) => cardHandler(title, dates)}
+          cardHandler={(title, startDate, endDate) =>
+            cardHandler(title, startDate, endDate)
+          }
           handlePrev={handlePrev}
           handleNext={handleNext}
           startIndex={startIndex}

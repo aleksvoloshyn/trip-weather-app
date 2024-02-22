@@ -12,7 +12,7 @@ const Board = () => {
   const [currentCityShort, setCurrentCityShort] = useState('Mumbai')
   const [currentCityTemp, setCurrentCityTemp] = useState('')
   const [currentCityWeatherIcon, setCurrentCityWeatherIcon] = useState()
-  const [tripStart, settripStart] = useState('')
+  const [tripStart, setTripStart] = useState('')
   const [currentCityStart, setCurrentCityStart] = useState('')
   const [currentCityEnd, setCurrentCityEnd] = useState('')
   const [weatherForWeek, setWeatherForWeek] = useState([])
@@ -63,22 +63,12 @@ const Board = () => {
   }
 
   // set selected trip info to state
-  const setCurrentCityInfo = (title, dates) => {
+  const setCurrentCityInfo = (title, startDate, endDate) => {
     setCurrentCity(title)
 
-    const trimmedTripStart = dates.substring(0, 10).split('.').join('-')
-    const trimmedDateStringStart = dates
-      .substring(0, 10)
-      .split('.')
-      .reverse()
-      .join('-')
-    const trimmedDateStringEnd = dates.slice(-10).split('.').reverse().join('-')
-    settripStart(trimmedTripStart)
-    setCurrentCityStart(trimmedDateStringStart)
-    setCurrentCityEnd(trimmedDateStringEnd)
-    console.log(title)
-    console.log(dates)
-    // setCurrentCityShort(title.substring(0, location.indexOf(',')))
+    setTripStart(startDate)
+    setCurrentCityStart(startDate)
+    setCurrentCityEnd(endDate)
   }
 
   const closeModal = () => {
