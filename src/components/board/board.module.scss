@@ -1,11 +1,19 @@
 @import './../../styles/breakpoints';
 
 .board {
-  max-width: $desktop;
-  width: 100%;
-
+  width: 1200px;
+  // width: 100%;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
   padding-top: 20px;
   display: flex;
+}
+@media (max-width: $tablet) {
+}
+@media (max-width: $mobile) {
+  .board {
+    max-width: $tablet;
+    border: 1px solid green;
+    flex-direction: column;
+  }
 }

@@ -9,7 +9,6 @@ import css from './board.module.scss'
 const Board = () => {
   const [trips, setTrips] = useState(tripList)
   const [filteredTrips, setFilteredTrips] = useState(tripList)
-
   const [currentCity, setCurrentCity] = useState('Kyiv, UA')
   const [currentCityTemp, setCurrentCityTemp] = useState('')
   const [currentCityWeatherIcon, setCurrentCityWeatherIcon] = useState()

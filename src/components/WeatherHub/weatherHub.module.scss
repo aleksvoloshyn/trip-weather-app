@@ -1,3 +1,4 @@
+@import './../../styles/breakpoints';
 .weatherHub {
   // outline: 2px solid salmon;
   width: 65%;
@@ -27,5 +28,11 @@
     border-radius: 5px;
     padding: 10px;
     background-color: lavenderblush;
+  }
+}
+
+@media (max-width: $mobile) {
+  .weatherHub {
+    width: 100%;
   }
 }

@@ -1,3 +1,4 @@
+@import './../../styles/breakpoints';
 .dailyPanel {
   min-height: 600px;
   // outline: 1px solid greenyellow;
@@ -9,4 +10,13 @@
   background-image: url('./../../images/bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@media (max-width: $mobile) {
+  .dailyPanel {
+    min-height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+  }
 }

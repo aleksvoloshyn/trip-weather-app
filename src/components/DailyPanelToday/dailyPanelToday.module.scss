@@ -1,3 +1,4 @@
+@import './../../styles/breakpoints';
 .dailyPanelToday {
   color: white;
   margin: 0 auto;
@@ -28,5 +29,25 @@
   &__img {
     width: 100px;
     margin-right: 20px;
+  }
+}
+@media (max-width: $mobile) {
+  .dailyPanelToday {
+    margin-bottom: 40px;
+    &__forecast {
+      margin-bottom: 20px;
+    }
+    &__day {
+      font-size: 34px;
+      margin-bottom: 0px;
+      letter-spacing: 5px;
+    }
+    &__degr {
+      font-size: 66px;
+    }
+    &__city {
+      font-size: 30px;
+      letter-spacing: 5px;
+    }
   }
 }
