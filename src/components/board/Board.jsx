@@ -88,13 +88,13 @@ const Board = () => {
   }
 
   const sortByDateHandlerDown = () => {
-    const sortedTripList = [...trips].sort((a, b) => {
+    const sortedTripList = [...filteredTrips].sort((a, b) => {
       return new Date(a.startDate) - new Date(b.startDate)
     })
     setFilteredTrips(sortedTripList)
   }
   const sortByDateHandlerUp = () => {
-    const sortedTripList = [...trips].sort((a, b) => {
+    const sortedTripList = [...filteredTrips].sort((a, b) => {
       return new Date(b.startDate) - new Date(a.startDate)
     })
     setFilteredTrips(sortedTripList)
