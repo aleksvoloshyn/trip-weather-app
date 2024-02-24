@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import DailyPanel from '../DailyPanel'
 import WeatherHub from '../WeatherHub'
-import { tripList } from './../../assets/tripList'
-import { getTodaysWeather, getForecast } from './../../services/getWeather'
+import { tripList } from '../../assets/tripList'
+import { getTodaysWeather, getForecast } from '../../services/getWeather'
 import Modal from '../Modal/Modal'
 import css from './board.module.scss'
 
