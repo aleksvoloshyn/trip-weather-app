@@ -84,3 +84,13 @@
     }
   }
 }
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .weatherHubTripList {
+    gap: 0 12px;
+    &__list {
+      flex-wrap: nowrap;
+      gap: 0 12px;
+    }
+  }
+}

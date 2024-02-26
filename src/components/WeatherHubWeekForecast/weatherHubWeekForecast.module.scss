@@ -47,8 +47,8 @@
     }
     &__list {
       display: flex;
-      gap: 0 2px;
-      justify-content: space-between;
+      gap: 0 10px;
+      // justify-content: space-between;
     }
     &__item {
       height: 100%;
@@ -65,6 +65,22 @@
     }
     &__maxmin {
       font-size: 8px;
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .weatherHubWeekForecast {
+    &__title {
+    }
+    &__list {
+      display: flex;
+      gap: 14px;
+      justify-content: flex-start;
+      justify-content: space-between;
+    }
+    &__icon {
+      width: 40px;
+      height: 40px;
     }
   }
 }
