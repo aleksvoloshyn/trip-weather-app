@@ -1,23 +1,23 @@
 export const tripList = [
   {
     city: 'Barcelona, Spain',
-    startDate: '2024-02-26',
-    endDate: '2024-03-08',
+    startDate: '2024-03-04',
+    endDate: '2024-03-12',
   },
   {
     city: 'London, UK',
-    startDate: '2024-02-23',
-    endDate: '2024-03-08',
+    startDate: '2024-03-05',
+    endDate: '2024-03-12',
   },
   {
     city: 'Paris, France',
-    startDate: '2024-02-21',
-    endDate: '2024-03-07',
+    startDate: '2024-03-06',
+    endDate: '2024-03-14',
   },
   {
     city: 'Kyiv, Ukraine',
-    startDate: '2024-02-25',
-    endDate: '2024-03-05',
+    startDate: '2024-03-08',
+    endDate: '2024-03-16',
   },
   // {
   //   city: 'Tokyo, Japan',

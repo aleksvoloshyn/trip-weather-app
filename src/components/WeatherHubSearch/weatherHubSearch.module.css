@@ -1,7 +1,6 @@
 .inputContainer {
   position: relative;
   margin-bottom: 30px;
-  /* z-index: -1; */
 }
 
 .searchIcon {
@@ -30,4 +29,14 @@
 
 .input:focus {
   border-color: lightslategray;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .inputContainer {
+    margin-bottom: 20px;
+  }
+  .input {
+    width: 100%;
+    font-size: 14px;
+  }
 }
