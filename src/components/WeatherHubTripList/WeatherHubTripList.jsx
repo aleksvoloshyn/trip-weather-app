@@ -16,22 +16,26 @@ const WeatherHubTripList = ({
   return (
     <div className={css.weatherHubTripList}>
       <div className={css.weatherHubTripList__wrapper}>
-        <ul className={css.weatherHubTripList__list}>
-          {data.map((v, ind) => {
-            return (
-              <WeatherHubTripItem
-                key={ind}
-                cityName={v.city}
-                startDate={v.startDate.split('-').reverse().join('.')}
-                endDate={v.endDate.split('-').reverse().join('.')}
-                img={v.city}
-                cardHandler={() => {
-                  cardHandler(v.city, v.startDate, v.endDate)
-                }}
-              />
-            )
-          })}
-        </ul>
+        {data.length > 0 ? (
+          <ul className={css.weatherHubTripList__list}>
+            {data.map((v, ind) => {
+              return (
+                <WeatherHubTripItem
+                  key={ind}
+                  cityName={v.city}
+                  startDate={v.startDate.split('-').reverse().join('.')}
+                  endDate={v.endDate.split('-').reverse().join('.')}
+                  img={v.city}
+                  cardHandler={() => {
+                    cardHandler(v.city, v.startDate, v.endDate)
+                  }}
+                />
+              )
+            })}
+          </ul>
+        ) : (
+          <p className={css.mess}>You have no planned trips </p>
+        )}
 
         {filteredData.length > 2 && (
           <div className={css.buttons}>

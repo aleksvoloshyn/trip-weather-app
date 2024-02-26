@@ -14,11 +14,11 @@ export const tripList = [
     startDate: '2024-03-06',
     endDate: '2024-03-14',
   },
-  {
-    city: 'Kyiv, Ukraine',
-    startDate: '2024-03-08',
-    endDate: '2024-03-16',
-  },
+  // {
+  //   city: 'Kyiv, Ukraine',
+  //   startDate: '2024-03-08',
+  //   endDate: '2024-03-16',
+  // },
   // {
   //   city: 'Tokyo, Japan',
   //   startDate: '2024-02-25',

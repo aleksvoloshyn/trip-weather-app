@@ -18,6 +18,8 @@ const Board = () => {
   const [weatherForWeek, setWeatherForWeek] = useState([])
   const [modalIsOpened, setModalIsOpened] = useState(false)
 
+  useEffect(() => {}, [])
+
   useEffect(() => {
     getTodaysWeather(currentCity).then((r) => {
       setCurrentCityTemp(r.days[0].temp)
