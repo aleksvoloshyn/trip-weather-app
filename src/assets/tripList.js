@@ -1,19 +1,19 @@
-export const tripList = [
+export const mockTripList = [
   {
     city: 'Barcelona, Spain',
-    startDate: '2024-03-04',
-    endDate: '2024-03-12',
+    startDate: '2024-03-10',
+    endDate: '2024-03-24',
   },
-  {
-    city: 'London, UK',
-    startDate: '2024-03-05',
-    endDate: '2024-03-12',
-  },
-  {
-    city: 'Paris, France',
-    startDate: '2024-03-06',
-    endDate: '2024-03-14',
-  },
+  // {
+  //   city: 'London, UK',
+  //   startDate: '2024-03-05',
+  //   endDate: '2024-03-12',
+  // },
+  // {
+  //   city: 'Paris, France',
+  //   startDate: '2024-03-06',
+  //   endDate: '2024-03-14',
+  // },
   // {
   //   city: 'Kyiv, Ukraine',
   //   startDate: '2024-03-08',

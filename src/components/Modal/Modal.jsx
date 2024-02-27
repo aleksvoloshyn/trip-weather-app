@@ -25,6 +25,18 @@ const Modal = ({ isOpen, onClose, onSave }) => {
     } else {
       console.log('Submitted data:', { startDate, endDate, city })
     }
+
+    // using localStorage
+    let existingData = localStorage.getItem('myData')
+    let parsedData = JSON.parse(existingData)
+
+    if (parsedData === null) {
+      parsedData = [{ startDate, endDate, city }]
+    } else {
+      parsedData.push({ startDate, endDate, city })
+    }
+    let updatedData = JSON.stringify(parsedData)
+    localStorage.setItem('myData', updatedData)
   }
 
   const handleCityChange = (event) => {
