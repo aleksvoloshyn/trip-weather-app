@@ -17,11 +17,15 @@ const WeatherHubTripItem = ({
     >
       <div className={css.weatherHubTripItemCard__top}>
         {img ? (
-          <img
-            src={`https://source.unsplash.com/featured/?${img}`}
-            alt={img}
-            className={css.weatherHubTripItemCard__image}
-          />
+          <>
+            {' '}
+            <img
+              src={`https://source.unsplash.com/featured/?${img}`}
+              alt={img}
+              className={css.weatherHubTripItemCard__image}
+            />
+            <div className={css.del}>X</div>
+          </>
         ) : (
           'no image...'
         )}

@@ -5,10 +5,19 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   height: 210px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &:hover,
+  &:active,
+  &:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+
   &__top {
     width: 100%;
     height: 70%;
     overflow: hidden;
+    position: relative;
   }
   &__image {
     width: 100%;
@@ -29,6 +38,26 @@
     font-size: 10px;
     color: #666;
   }
+}
+
+.active {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+.del {
+  display: none;
+  // position: absolute;
+
+  // top: 0px;
+  // right: 1px;
+  // background-color: salmon;
+  // width: 20px;
+  // height: 20px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // opacity: 0.8;
+  // border-radius: 50%;
+  // cursor: default;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
