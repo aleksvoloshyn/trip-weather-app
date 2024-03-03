@@ -4,6 +4,7 @@ import WeatherHub from '../WeatherHub'
 import { mockTripList } from '../../assets/tripList'
 import { getTodaysWeather, getForecast } from '../../services/getWeather'
 import Modal from '../Modal/Modal'
+import Signin from '../SignIn/Signin'
 import css from './board.module.scss'
 
 const Board = () => {
@@ -124,6 +125,7 @@ const Board = () => {
   return (
     <div className={css.board}>
       <Modal isOpen={modalIsOpened} onClose={closeModal} onSave={handleSave} />
+      <Signin></Signin>
       <WeatherHub
         data={displayedCities}
         cardHandler={setCurrentCityInfo}
